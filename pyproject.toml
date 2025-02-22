@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "keyboard"
+version = "0.1.0"
+description = "Web Django project"
+authors = [
+    "Nikita Yakovlev <driftworks2013@yandex.ru>",
+]
+
+packages = [
+    { include = "keyboard_project" },
+]
+readme = "README.md"
+
+[tool.poetry.scripts]
+lint = "scripts:lint"
+test = "scripts:test"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+django = "^5.1.6"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^25.1.0"
+mypy = "^1.15.0"
+isort = "^6.0.0"
+
+[tool.isort]
+multi_line_output = 3
+profile = "black"
+
+[tool.black]
+line-length = 88
+include = '\.pyi?$'
