@@ -18,6 +18,7 @@ test = "scripts:test"
 [tool.poetry.dependencies]
 python = "^3.12"
 django = "^5.1.6"
+django-debug-toolbar = "^5.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
