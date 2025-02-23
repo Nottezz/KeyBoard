@@ -59,7 +59,6 @@ MIDDLEWARE = [
 ]
 
 
-
 ROOT_URLCONF = "keyboard_project.urls"
 
 TEMPLATES = [
