@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h1>{{keyboard.name}}</h1>
+  <img src="{{keyboard.photo.url}}">
+  <p>{{keyboard.description}}</p>
+  <p>{{keyboard.counter}}</p>
+  <p>{{keyboard.specifications}}</p>
+  <p>{{keyboard.equipments}}</p>
+</div>
+{% endblock %}
