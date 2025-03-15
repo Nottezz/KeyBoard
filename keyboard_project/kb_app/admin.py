@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import KeyBoard, Specification, Category
+from .models import Category, KeyBoard, Specification
 
 admin.register(Specification)
 admin.register(Category)

@@ -14,7 +14,6 @@ import os
 from configparser import ConfigParser
 from pathlib import Path
 
-from django.conf.global_settings import MEDIA_ROOT
 
 config = ConfigParser()
 config.read("settings.ini")
