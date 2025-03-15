@@ -9,9 +9,12 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
 import os
 from configparser import ConfigParser
 from pathlib import Path
+
+from django.conf.global_settings import MEDIA_ROOT
 
 config = ConfigParser()
 config.read("settings.ini")
@@ -43,8 +46,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
-
-    "kb_app.apps.KbAppConfig"
+    "kb_app.apps.KbAppConfig",
 ]
 
 MIDDLEWARE = [
@@ -63,7 +65,9 @@ ROOT_URLCONF = "keyboard_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates", ],
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -122,6 +126,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
