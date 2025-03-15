@@ -101,6 +101,11 @@ class Category(models.Model):
 
 
 class Specification(models.Model):
+    name = models.CharField(
+        max_length=50,
+        default=None,
+        verbose_name="Название клавиатуры",
+    )
     key_material = models.CharField(
         max_length=50,
         verbose_name="Материал клавиш",
@@ -121,7 +126,7 @@ class Specification(models.Model):
     )
     connection_interface = models.CharField(
         max_length=255,
-        verbose_name="Интерфейст подключения",
+        verbose_name="Интерфейс подключения",
     )
     weight = models.FloatField(
         verbose_name="Вес",
