@@ -77,7 +77,9 @@ class KeyBoard(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("keyboard", kwargs={"keyboard_slug": self.slug})
+        return reverse(
+            "keyboards:keyboard_details", kwargs={"keyboard_slug": self.slug}
+        )
 
 
 class Category(models.Model):
