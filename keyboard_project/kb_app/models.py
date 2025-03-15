@@ -35,6 +35,10 @@ class KeyBoard(models.Model):
         default=Status.DRAFT,
         verbose_name="Статус",
     )
+    price = models.IntegerField(
+        default=0,
+        verbose_name="Стоимость за единицу товара",
+    )
     category = models.ForeignKey(
         "Category",
         on_delete=models.PROTECT,
