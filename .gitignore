@@ -1,4 +1,4 @@
 .idea
-/keyboard_project/settings.ini
-/keyboard_project/db.sqlite3
-/keyboard_project/media/
+/src/settings.ini
+/src/db.sqlite3
+/src/media/
