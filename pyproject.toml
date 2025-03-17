@@ -21,6 +21,7 @@ django = "^5.1.7"
 django-debug-toolbar = "^5.0.1"
 pillow = "^11.1.0"
 django-extensions = "^3.2.3"
+python-dotenv = "^1.0.1"
 
 
 [tool.poetry.group.dev.dependencies]
