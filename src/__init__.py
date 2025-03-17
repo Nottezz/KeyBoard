@@ -1,1 +1,1 @@
-import keyboard_project
+from . import keyboard_project

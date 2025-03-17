@@ -14,7 +14,6 @@ import os
 from configparser import ConfigParser
 from pathlib import Path
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -31,7 +30,7 @@ SECRET_KEY = config["settings"]["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = ["127.0.0.1"]
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
