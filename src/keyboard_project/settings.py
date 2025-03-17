@@ -28,7 +28,7 @@ config.read(BASE_DIR / "settings.ini")
 SECRET_KEY = config["settings"]["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config["settings"]["DEBUG"]
 
 ALLOWED_HOSTS: list[str] = ["127.0.0.1"]
 INTERNAL_IPS = [
