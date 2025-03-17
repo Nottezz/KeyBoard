@@ -7,7 +7,7 @@ authors = [
 ]
 
 packages = [
-    { include = "keyboard_project" },
+    { include = "keyboard_project", from = "src" },
 ]
 readme = "README.md"
 
@@ -17,7 +17,7 @@ test = "scripts:test"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-django = "^5.1.6"
+django = "^5.1.7"
 django-debug-toolbar = "^5.0.1"
 pillow = "^11.1.0"
 django-extensions = "^3.2.3"
