@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 class="text-center">Механические клавиатуры</h1>
+    {% if kb_list %}
+    {% for keyboard in kb_list %}
+    <div class="card" style="width: 18rem;">
+        <img src={{keyboard.photo.url}} class="card-img-top" alt="keyboard photo">
+        <div class="card-body">
+            <h5 class="card-title">{{keyboard.name}}</h5>
+            <p class="card-text">{{keyboard.description}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{keyboard.price}} ₽</li>
+        </ul>
+        <a href="{{keyboard.get_absolute_url}}" class="btn btn-primary">Go somewhere</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <h2 class="text-muted text-center">Упс..Здесь пока ничего нет</h2>
+    {% endif %}
+</div>
+{% endblock %}

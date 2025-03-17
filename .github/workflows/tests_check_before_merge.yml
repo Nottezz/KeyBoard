@@ -22,6 +22,11 @@ jobs:
         run: |
           poetry install --no-cache
 
-      - name: Run linter
+      - name: Create settings.ini
+        run: |
+          echo "[settings]" > settings.ini
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> settings.ini
+
+      - name: Run test
         run: |
           poetry run test

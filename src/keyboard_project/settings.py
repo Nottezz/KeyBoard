@@ -9,12 +9,10 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
+
 import os
 from configparser import ConfigParser
 from pathlib import Path
-
-config = ConfigParser()
-config.read("settings.ini")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,12 +21,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+
+config = ConfigParser()
+config.read(BASE_DIR / "settings.ini")
+
 SECRET_KEY = config["settings"]["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config["settings"]["DEBUG"]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: list[str] = ["127.0.0.1"]
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
@@ -43,8 +45,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "debug_toolbar",
-
-    "kb_app.apps.KbAppConfig"
+    "django_extensions",
+    "kb_app.apps.KbAppConfig",
 ]
 
 MIDDLEWARE = [
@@ -63,7 +65,9 @@ ROOT_URLCONF = "keyboard_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / "templates", ],
+        "DIRS": [
+            BASE_DIR / "templates",
+        ],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -122,6 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

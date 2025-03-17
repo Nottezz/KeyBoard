@@ -10,7 +10,7 @@ from mypy.main import main as mypy_main
 
 keyboard_top_level_dir = pathlib.Path(__file__).parent
 keyboard_pyproject_dir = keyboard_top_level_dir / "pyproject.toml"
-keyboard_source_dir = keyboard_top_level_dir / "keyboard_project"
+keyboard_source_dir = keyboard_top_level_dir / "src"
 
 KEYBOARD_SOURCE_DIR = str(keyboard_source_dir)
 KEYBOARD_PYPROJECT_FILE = str(keyboard_pyproject_dir)
@@ -67,3 +67,7 @@ def test():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "keyboard_project.settings")
     sys.argv = ["manage.py", "test"]
     execute_from_command_line(sys.argv)
+
+
+if __name__ == "__main__":
+    test()
